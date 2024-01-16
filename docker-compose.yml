@@ -22,7 +22,7 @@ services:
       - '8080:3000'
     extra_hosts:
       - 'host.docker.internal:host-gateway'
-    enviroment:
+    environment:
       - ENCRYPTION_SECRET=do+UspMmB/rewbX2K/rskFmtgGSSZ8Ta
       - DATABASE_URL=postgresql://postgres:typebot@typebot-db:5432/typebot
       - GITHUB_CLIENT_ID=3afc6a65325103bcfd6f
@@ -36,7 +36,7 @@ services:
     restart: always
     ports:
       - '8081:3000'
-    enviroment:
+    environment:
       - ENCRYPTION_SECRET=do+UspMmB/rewbX2K/rskFmtgGSSZ8Ta
       - DATABASE_URL=postgresql://postgres:typebot@typebot-db:5432/typebot
       - GITHUB_CLIENT_ID=3afc6a65325103bcfd6f
