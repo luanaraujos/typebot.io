@@ -22,11 +22,25 @@ services:
       - '8080:3000'
     extra_hosts:
       - 'host.docker.internal:host-gateway'
-    env_file: .env
+    enviroment:
+      - ENCRYPTION_SECRET=do+UspMmB/rewbX2K/rskFmtgGSSZ8Ta
+      - DATABASE_URL=postgresql://postgres:typebot@typebot-db:5432/typebot
+      - GITHUB_CLIENT_ID=3afc6a65325103bcfd6f
+      - GITHUB_CLIENT_SECRET=a77eccfa01a917a49fad738e1db33b8f02a52641
+      - NEXTAUTH_URL=https://builder.solute.cloud
+      - NEXT_PUBLIC_VIEWER_URL=https://viewer.solute.cloud
+      - ADMIN_EMAIL=luaanscar@gmail.com
 
   typebot-viewer:
     image: baptistearno/typebot-viewer:latest
     restart: always
     ports:
       - '8081:3000'
-    env_file: .env
+    enviroment:
+      - ENCRYPTION_SECRET=do+UspMmB/rewbX2K/rskFmtgGSSZ8Ta
+      - DATABASE_URL=postgresql://postgres:typebot@typebot-db:5432/typebot
+      - GITHUB_CLIENT_ID=3afc6a65325103bcfd6f
+      - GITHUB_CLIENT_SECRET=a77eccfa01a917a49fad738e1db33b8f02a52641
+      - NEXTAUTH_URL=https://builder.solute.cloud
+      - NEXT_PUBLIC_VIEWER_URL=https://viewer.solute.cloud
+      - ADMIN_EMAIL=luaanscar@gmail.com
